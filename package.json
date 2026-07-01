@@ -1,0 +1,30 @@
+{
+  "name": "swagger-documentation",
+  "version": "1.0.0",
+  "description": "A simple http server with nodejs",
+  "license": "ISC",
+  "author": "Adebisi Tosin",
+  "type": "module",
+  "main": "server.js",
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "scripts": {
+    "start": "node src/server",
+    "dev": "nodemon src/server"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.4.1",
+    "nodemailer": "^8.0.5",
+    "perfect-express-sanitizer": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
