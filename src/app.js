@@ -3,6 +3,9 @@ import express, { json, urlencoded } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "#/helpers/swagger-spec.js";
+
 // Import route handlers
 import userRoutes from "#/users/user-routes.js";
 import authRoutes from "#/auth/auth-routes.js";
@@ -39,6 +42,7 @@ app.get("/", (req, res) => {
 });
 
 // Mount the user and auth routes under the /api/v1 prefix
+app.use("/api/v1/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/auth", authRoutes);
 
