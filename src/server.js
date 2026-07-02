@@ -2,7 +2,7 @@ import { createServer } from "http";
 import app from "#/app.js";
 import { connectDb } from "#/helpers/db-config.js";
 import { PORT } from "#/lib/index.js";
-const httpServer = createServer();
+const httpServer = createServer(app);
 
 const startServer = async () => {
   await connectDb();

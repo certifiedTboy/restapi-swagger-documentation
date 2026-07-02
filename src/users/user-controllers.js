@@ -5,18 +5,14 @@ export const createNewUser = async (req, res, next) => {
   try {
     const { firstName, lastName, email, password } = req.body;
 
-    const result = await createUser({
+    await createUser({
       firstName,
       lastName,
       email,
       password,
     });
 
-    ResponseHandler.created(
-      res,
-      { otp: result.otp },
-      "user created successfully",
-    );
+    ResponseHandler.created(res, {}, "user created successfully");
   } catch (error) {
     next(error);
   }

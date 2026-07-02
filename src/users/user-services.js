@@ -20,7 +20,7 @@ export const createUser = async (userData) => {
 
 export const checkUserExists = async (query) => {
   const userExist = await User.findOne(query).select(
-    "-__v -otp -otpExpiresIn -createdAt -updatedAt",
+    "-__v -otp -otpExpiresIn -createdAt -updatedAt -password",
   );
 
   if (!userExist) {
