@@ -18,17 +18,6 @@ export const createNewUser = async (req, res, next) => {
   }
 };
 
-export const verifyUserAccount = async (req, res, next) => {
-  try {
-    const { otp } = req.body;
-
-    const result = await verifyAccount(otp);
-
-    ResponseHandler.ok(res, null, "account verified successfully");
-  } catch (error) {
-    next(error);
-  }
-};
 
 export const getCurrentUser = async (req, res, next) => {
   try {
