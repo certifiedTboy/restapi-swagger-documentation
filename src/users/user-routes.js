@@ -1,7 +1,6 @@
 import { Router } from "express";
 import {
   createNewUser,
-  verifyUserAccount,
   getCurrentUser,
 } from "./user-controllers.js";
 import {
